@@ -5,14 +5,14 @@
 [- Introduction](#Introduction): brief introduction to the problem\
 [- Architecture](#Architecture): architecture of the idea\
 [- Project structure](#Project-structure): how the project is organized\
-[- Getting started](#Getting-started): guide to run the project\
+[- Getting started](#Getting-started): guide to run the project
 
 ## Introduction
 
 This is a project for the exam of Serverless Computing for IoT.
 
 The idea is to **simulate a moisture sensor** placed in a pot of a plant **to warn** the user **when the humidity of the pot is too low**.\
-When the user is notified of this, **he can choose what to do** which is one thing among the following:
+When the user is notified, **he can choose what to do** from a Telegram bot which is one thing among the following:
 
 - Water the plant remotely;
 - Warn someone to water the plant.
