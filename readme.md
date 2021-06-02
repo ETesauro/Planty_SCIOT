@@ -95,3 +95,9 @@ After all these steps, you are able to send a value using both **sendrandomumidi
 Below will be presented a short **demo** of the execution of the project.
 
 ## Demo
+
+<p align="center">
+<video width="320" height="240" controls>
+  <source src="doc/demo.mp4" type="video/mp4">
+</video>
+</p>
