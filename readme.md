@@ -53,8 +53,9 @@ The user chooses what to do but, of course, the action is only simulated for the
 
 ## Getting started
 
-> **NOTE**\
-> All of these commands, except those concerning dockers, must be executed from the **root of the project**.
+> **NOTE**: all of these commands, except those concerning dockers, must be executed from the **root of the project**.
+
+From **two different** terminals, start the docker to run RabbitMQ and Nuclio with these following commands:
 
 ### Docker RabbitMQ:
 
@@ -67,6 +68,13 @@ docker run -p 9000:15672  -p 1883:1883 -p 5672:5672  cyrilix/rabbitmq-mqtt
 ```sh
 docker run -p 8070:8070 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp nuclio/dashboard:stable-amd64
 ```
+
+### Create personal Telegram Bot
+
+- Open Telegram and search for [BotFather](https://t.me/BotFather).
+- Press **start** and type **/newbot**.
+- Give it a **name** and a **unique id** (BotFather will help you).
+- Copy and paste the **Token** that BotFather gave you in the **Telegraf constructor** in [telegram_bot.js](src/telegram_bot.js) (line 5);
 
 ### Install all dependencies
 
@@ -85,3 +93,5 @@ node src/telegram_bot.js
 ```sh
 node src/logger.js
 ```
+
+### Start Telegram Bot

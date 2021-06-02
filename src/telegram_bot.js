@@ -1,10 +1,9 @@
 const { Telegraf } = require("telegraf");
 const amqp = require("amqplib");
 const moment = require("moment");
-//moment.locale("it");
 
 const bot = new Telegraf("1823307442:AAH379PknXyDpmBZiFY1d99iYgVBG16ksG0");
-var chatId = "57008256";
+var chatId;
 
 // * Client riceve un messaggio dalla coda
 connectAndWait();
