@@ -16,13 +16,6 @@ bot.start((ctx) => {
   );
 });
 
-// * Risposta dal bot
-bot.on("message", (ctx) => {
-  if (ctx.update.message.text === "Hello") {
-    ctx.reply("ciao");
-  }
-});
-
 // * Callback function
 bot.action("water", (ctx) => {
   sendMessage("I’m watering the plant remotely.");
