@@ -87,9 +87,16 @@ From **two different** terminals, start the docker to run RabbitMQ and Nuclio wi
 
 - **Install all dependencies, start Telegram Bot's Server and start Logger**:
 
+  Open two more terminals and type on the first:
+
   ```sh
   npm install
   node src/telegram_bot.js
+  ```
+
+  and on the second:
+
+  ```sh
   node src/logger.js
   ```
 
