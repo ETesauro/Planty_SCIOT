@@ -53,7 +53,8 @@ The user chooses what to do but, of course, the action is only simulated for the
 
 ## Getting started
 
-> **NOTE** All of these commands, except those concerning dockers, must be executed from the **root of the project**.
+> **NOTE**\
+> All of these commands, except those concerning dockers, must be executed from the **root of the project**.
 
 ### Docker RabbitMQ:
 
