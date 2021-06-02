@@ -53,39 +53,45 @@ The user chooses what to do but, of course, the action is only simulated for the
 
 ## Getting started
 
-> **NOTE**: all of these commands, except those concerning dockers, must be executed from the **root of the project**.
+> Note: all of these commands, except those concerning dockers, must be executed from the **root of the project**.
+
+> Note: Planty requires [Node.js](https://nodejs.org/) to run.
 
 From **two different** terminals, start the docker to run RabbitMQ and Nuclio with these following commands:
 
-### Docker RabbitMQ:
+- **Docker RabbitMQ**:
 
-```sh
-docker run -p 9000:15672  -p 1883:1883 -p 5672:5672  cyrilix/rabbitmq-mqtt
-```
+  ```sh
+  docker run -p 9000:15672  -p 1883:1883 -p 5672:5672  cyrilix/rabbitmq-mqtt
+  ```
 
-### Docker Nuclio:
+- **Docker Nuclio**:
 
-```sh
-docker run -p 8070:8070 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp nuclio/dashboard:stable-amd64
-```
+  ```sh
+  docker run -p 8070:8070 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp nuclio/dashboard:stable-amd64
+  ```
 
-### Create personal Telegram Bot
+- **Create personal Telegram Bot**:
 
-- Open Telegram and search for [BotFather](https://t.me/BotFather).
-- Press **start** and type **/newbot**.
-- Give it a **name** and a **unique id** (BotFather will help you).
-- Copy and paste the **Token** that BotFather gave you in the **Telegraf constructor** in [telegram_bot.js](src/telegram_bot.js) inside the quotes (line 5);
+  - Open Telegram and search for [BotFather](https://t.me/BotFather).
+  - Press **start** and type **/newbot**.
+  - Give it a **name** and a **unique id** (BotFather will help you).
+  - Copy and paste the **Token** that BotFather gave you in the **Telegraf constructor** in [telegram_bot.js](src/telegram_bot.js) inside the quotes (line 5);
 
-Now, run the next commands **before** starting the bot.
+- **Install all dependencies, start Telegram Bot's Server and start Logger**:
 
-### Install all dependencies, start Telegram Bot Server and Logger
+  ```sh
+  npm install
+  node src/telegram_bot.js
+  node src/logger.js
+  ```
 
-```sh
-npm install
-node src/telegram_bot.js
-node src/logger.js
-```
+- **Start Telegram Bot Client**:
 
-### Start Telegram Bot Client
+  Now, you can go to the bot you've just created and run it.
 
-Now, you can go to the bot you've just created and run it.
+After all these steps, you are able to send a value using both **sendrandomumidity** on Nuclio and an **MQTT client** from your smartphone and if this value is **less than or equal to 10** you will be notified on the bot and asked to make a decision.
+
+Below will be presented a short **demo** of the execution of the project.
+
+## Demo
