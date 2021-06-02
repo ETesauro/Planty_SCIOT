@@ -74,24 +74,18 @@ docker run -p 8070:8070 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tm
 - Open Telegram and search for [BotFather](https://t.me/BotFather).
 - Press **start** and type **/newbot**.
 - Give it a **name** and a **unique id** (BotFather will help you).
-- Copy and paste the **Token** that BotFather gave you in the **Telegraf constructor** in [telegram_bot.js](src/telegram_bot.js) (line 5);
+- Copy and paste the **Token** that BotFather gave you in the **Telegraf constructor** in [telegram_bot.js](src/telegram_bot.js) inside the quotes (line 5);
 
-### Install all dependencies
+Now, run the next commands **before** starting the bot.
+
+### Install all dependencies, start Telegram Bot Server and Logger
 
 ```sh
 npm install
-```
-
-### Start Telegram Bot
-
-```sh
 node src/telegram_bot.js
-```
-
-### Start Logger
-
-```sh
 node src/logger.js
 ```
 
-### Start Telegram Bot
+### Start Telegram Bot Client
+
+Now, you can go to the bot you've just created and run it.
