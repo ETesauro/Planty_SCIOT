@@ -1,8 +1,9 @@
 const { Telegraf } = require("telegraf");
 const amqp = require("amqplib");
 const moment = require("moment");
+require("dotenv").config();
 
-const bot = new Telegraf("<put your Bot Token here>");
+const bot = new Telegraf(`${process.env.BOT_TOKEN}`);
 var chatId;
 
 // * Client riceve un messaggio dalla coda
@@ -43,7 +44,7 @@ bot.launch();
 // * Aspetto connessioni
 function connectAndWait() {
   amqp
-    .connect("amqp://guest:guest@192.168.1.20:5672")
+    .connect(`amqp://guest:guest@${process.env.MY_IP}:5672`)
     .then(function (conn) {
       return conn.createChannel().then(function (ch) {
         var ok = ch.assertQueue("iot/alerts", { durable: false });
@@ -101,7 +102,7 @@ function waitForMessage(msg) {
 function sendMessage(msg) {
   var queue = "iot/logs";
   amqp
-    .connect("amqp://guest:guest@192.168.1.20:5672")
+    .connect(`amqp://guest:guest@${process.env.MY_IP}:5672`)
     .then(function (conn) {
       return conn
         .createChannel()

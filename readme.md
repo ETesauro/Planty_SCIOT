@@ -53,9 +53,7 @@ The user chooses what to do but, of course, the action is only simulated for the
 
 ## Getting started
 
-> Note_1: all of these commands, except those concerning dockers, must be executed from the **root of the project**.
-
-> Note_2: Planty requires [Node.js](https://nodejs.org/) to run.
+> Note: Planty requires [Node.js](https://nodejs.org/) to run.
 
 From **two different** terminals, start the docker to run RabbitMQ and Nuclio with these following commands:
 
@@ -76,7 +74,9 @@ From **two different** terminals, start the docker to run RabbitMQ and Nuclio wi
   - Type '**localhost:8070**' on your browser to open the homepage of Nuclio;
   - Create new project and call it '_Planty_';
   - Press '**Create function**', '**Import**' and upload the two functions that are in the **yaml_functions** folder;
-  - On both, **change the IP with your** own and press **'Deploy'**.
+  - In both, **change the already present IP with your IP**;\
+    !!!Don't forget the trigger!!!
+  - Press **'Deploy'**.
 
 - **Create personal Telegram Bot**:
 
@@ -87,7 +87,9 @@ From **two different** terminals, start the docker to run RabbitMQ and Nuclio wi
 
 - **Install all dependencies, start Telegram Bot's Server and start Logger**:
 
-  Open two more terminals and type on the first:
+  Open **.env** file and change all the information with your.
+
+  Open two more terminals and type, from the **root of the project**, on the first:
 
   ```sh
   npm install
@@ -102,7 +104,9 @@ From **two different** terminals, start the docker to run RabbitMQ and Nuclio wi
 
 - **Start Telegram Bot Client**:
 
-  Now, you can go to the bot you've just created and run it.
+  Now, you can go to the bot you've just created on Telegram and run it.
+
+  The bot will warn you not to stop it to continue receiving updates on the plant.
 
 After all these steps, you are able to send a value using both **sendrandomumidity** on Nuclio and an **MQTT client** from your smartphone and if this value is **less than or equal to 10** you will be notified on the bot and asked to make a decision.
 

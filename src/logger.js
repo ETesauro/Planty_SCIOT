@@ -1,8 +1,9 @@
 var amqp = require("amqplib");
 const moment = require("moment");
+require("dotenv").config();
 
 amqp
-  .connect("amqp://guest:guest@192.168.1.20:5672")
+  .connect(`amqp://guest:guest@${process.env.MY_IP}:5672`)
   .then(function (conn) {
     process.once("SIGINT", function () {
       conn.close();
