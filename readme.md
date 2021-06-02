@@ -53,9 +53,9 @@ The user chooses what to do but, of course, the action is only simulated for the
 
 ## Getting started
 
-> Note: all of these commands, except those concerning dockers, must be executed from the **root of the project**.
+> Note_1: all of these commands, except those concerning dockers, must be executed from the **root of the project**.
 
-> Note: Planty requires [Node.js](https://nodejs.org/) to run.
+> Note_2: Planty requires [Node.js](https://nodejs.org/) to run.
 
 From **two different** terminals, start the docker to run RabbitMQ and Nuclio with these following commands:
 
@@ -70,6 +70,13 @@ From **two different** terminals, start the docker to run RabbitMQ and Nuclio wi
   ```sh
   docker run -p 8070:8070 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp nuclio/dashboard:stable-amd64
   ```
+
+- **Update and deploy Functions**:
+
+  - Type '**localhost:8070**' on your browser to open the homepage of Nuclio;\
+  - Create new project and call it '_Planty_';
+  - Press '**Create function**', '**Import**' and upload the two functions that are in the **yaml_functions** folder;
+  - On both, **change the IP with your** own and press **'Deploy'**.
 
 - **Create personal Telegram Bot**:
 
