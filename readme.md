@@ -1,5 +1,9 @@
 # **Planty**: Serverless Computing For IoT Project
 
+<p align="center">
+<img src="doc/logo.png" alt="drawing" width="200"/>
+</p>
+
 ## Summary
 
 [- Introduction](#Introduction): brief introduction to the problem\
@@ -12,7 +16,7 @@
 This is a project for the exam of Serverless Computing for IoT.
 
 The idea is to **simulate a moisture sensor** placed in a pot of a plant **to warn** the user **when the humidity of the pot is too low**.\
-When the user is notified, **he can choose what to do** from a Telegram bot which is one thing among the following:
+When the user is notified, **he can choose what to do** from a Telegram bot, which is one thing among the following:
 
 - Water the plant remotely;
 - Warn someone to water the plant.
@@ -45,6 +49,7 @@ The user chooses what to do but, of course, the action is only simulated for the
 - yaml_functions/
   - _**sendrandomumidity.yaml**_: takes care of sending a random value to the queue **iot/sensors/umidity**
   - _**consumeumidity.yaml**_: takes care of processing received values and to warn the user or log data
+- doc/: everything related to documentation
 
 ## Getting started
 
