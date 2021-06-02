@@ -96,8 +96,4 @@ Below will be presented a short **demo** of the execution of the project.
 
 ## Demo
 
-<p align="center">
-<video width="320" height="240" controls>
-  <source src="doc/demo.mp4" type="video/mp4">
-</video>
-</p>
+https://user-images.githubusercontent.com/21143922/120530510-e27d8e00-c3dd-11eb-89cc-c2ae72904e98.mp4
