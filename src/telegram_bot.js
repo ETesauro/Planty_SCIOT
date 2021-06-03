@@ -12,9 +12,15 @@ connectAndWait();
 // * Start del bot
 bot.start((ctx) => {
   chatId = ctx.update.message.chat.id;
-  ctx.reply(
-    `Hi ${ctx.update.message.chat.first_name}! Don't stop this bot if you want to keep track of your plant.`
-  );
+  ctx
+    .reply(
+      `🤖 Hi ${ctx.update.message.chat.first_name}! Nice to meet you!\n\nI’ll warn you when the soil of your plant will be too dry. 🦾`
+    )
+    .then(() => {
+      ctx.reply(
+        `⚠️ Don't stop this bot if you want to keep track of your plant.\n`
+      );
+    });
 });
 
 // * Callback function
@@ -93,7 +99,7 @@ function waitForMessage(msg) {
   // Messaggio al bot
   bot.telegram.sendMessage(
     chatId,
-    `Hey! The soil of the plant is too dry. Humidity is at ${msg.content.toString()}%!\nWhat do you do?`,
+    `Hey! The soil of the plant is too dry. Humidity is at ${msg.content.toString()}%! 🏜\nWhat do you want to do?`,
     options
   );
 }
