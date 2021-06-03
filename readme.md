@@ -41,6 +41,10 @@ At this point, inside **telegram_bot.js** the publication in **_iot/alerts_** is
 
 The user chooses what to do but, of course, the action is only simulated for the reasons mentioned in the previous paragraph.
 
+<p align="center">
+<img src="doc/architecture.jpeg" alt="drawing"/>
+</p>
+
 ## Project structure
 
 - src/
@@ -49,7 +53,8 @@ The user chooses what to do but, of course, the action is only simulated for the
 - yaml_functions/
   - _**sendrandomumidity.yaml**_: takes care of sending a random value to the queue **iot/sensors/umidity**
   - _**consumeumidity.yaml**_: takes care of processing received values and to warn the user or log data
-- doc/: everything related to documentation
+- **doc/**: everything related to documentation
+- **.env**: file containing settings for javascript scripts
 
 ## Getting started
 
@@ -89,7 +94,7 @@ From **two different** terminals, start the docker to run RabbitMQ and Nuclio wi
 
   Open again **.env** file and insert your **IP address** instead of '_INSERT_YOUR_IP_'.
 
-  Open two more terminals and type, from the **root of the project**, on the first:
+  Open **two more** terminals and type, from the **root of the project**, on the first:
 
   ```sh
   npm install
