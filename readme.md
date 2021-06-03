@@ -75,7 +75,7 @@ From **two different** terminals, start the docker to run RabbitMQ and Nuclio wi
   - Create new project and call it '_Planty_';
   - Press '**Create function**', '**Import**' and upload the two functions that are in the **yaml_functions** folder;
   - In both, **change the already present IP with your IP**;\
-    !!!Don't forget the trigger!!!
+    **!!!Don't forget the trigger!!!**
   - Press **'Deploy'**.
 
 - **Create personal Telegram Bot**:
@@ -83,11 +83,11 @@ From **two different** terminals, start the docker to run RabbitMQ and Nuclio wi
   - Open Telegram and search for [BotFather](https://t.me/BotFather).
   - Press **start** and type **/newbot**.
   - Give it a **name** and a **unique id** (BotFather will help you).
-  - Copy and paste the **Token** that BotFather gave you in the **Telegraf constructor** in [telegram_bot.js](src/telegram_bot.js) inside the quotes (line 5);
+  - Copy and paste the **Token** that BotFather gave you in the **Telegraf constructor** in [.env](.env) file;
 
 - **Install all dependencies, start Telegram Bot's Server and start Logger**:
 
-  Open **.env** file and change all the information with your.
+  Open again **.env** file and insert your **IP address** instead of '_INSERT_YOUR_IP_'.
 
   Open two more terminals and type, from the **root of the project**, on the first:
 
