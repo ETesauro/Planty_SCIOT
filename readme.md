@@ -58,7 +58,7 @@ The user chooses what to do but, of course, the action is only simulated for the
 
 ## Getting started
 
-> Note: Planty requires [Node.js](https://nodejs.org/) to run.
+> Note: Planty requires [Node.js](https://nodejs.org/) and [Docker](https://www.docker.com/products/docker-desktop) to run.
 
 From **two different** terminals, start the docker to run RabbitMQ and Nuclio with these following commands:
 
