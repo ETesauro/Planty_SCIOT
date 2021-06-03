@@ -28,14 +28,14 @@ Obviously, all these things are **simulated** because, right now, I am **not** i
 As previously mentioned, one of the phases of the project is to simulate the sending of data by an Iot sensor (in this case a humidity sensor).\
 In this project, this can be done in two ways:
 
-- using the function '**_sendrandomumidity_**' on Nuclio;
+- using the function '**_sendrandomhumidity_**' on Nuclio;
 - using a MQTT client from your smartphone:
   - iOS: [EasyMQTT](https://apps.apple.com/it/app/easymqtt/id1523099606)
   - Android: [MQTT Dash (IoT, Smart home)](https://play.google.com/store/apps/details?id=net.routix.mqttdash)
 
-The data is an integer value **between 0 and 100** and indicates the **percentage of humidity of the soil** in the pot. This value is published in the queue '**iot/sensors/umidity**' of **RabbitMQ**.
+The data is an integer value **between 0 and 100** and indicates the **percentage of humidity of the soil** in the pot. This value is published in the queue '**iot/sensors/humidity**' of **RabbitMQ**.
 
-When a value is published in this queue, a function on Nuclio (**_consumeumidity_**) is triggered, which processes this value. This function checks if the umidity is too low (**&le;10%**) and, if so, publish a new message in the queue '**_iot/alerts_**', otherwise log it by publishing it in the queue '**_iot/logs_**'.
+When a value is published in this queue, a function on Nuclio (**_consumehumidity_**) is triggered, which processes this value. This function checks if the humidity is too low (**&le;10%**) and, if so, publish a new message in the queue '**_iot/alerts_**', otherwise log it by publishing it in the queue '**_iot/logs_**'.
 
 At this point, inside **telegram_bot.js** the publication in **_iot/alerts_** is intercepted and a message is sent to the user thanks to a **Telegram bot**.
 
@@ -51,8 +51,8 @@ The user chooses what to do but, of course, the action is only simulated for the
   - _**telegram_bot.js**_: takes care of communication from/to bot
   - _**logger.js**_: takes care of printing both the humidity when is **not** too low, and the user’s response from the bot
 - yaml_functions/
-  - _**sendrandomumidity.yaml**_: takes care of sending a random value to the queue **iot/sensors/umidity**
-  - _**consumeumidity.yaml**_: takes care of processing received values and to warn the user or log data
+  - _**sendrandomhumidity.yaml**_: takes care of sending a random value to the queue **iot/sensors/humidity**
+  - _**consumehumidity.yaml**_: takes care of processing received values and to warn the user or log data
 - **doc/**: everything related to documentation
 - **.env**: file containing settings for javascript scripts
 
@@ -113,7 +113,7 @@ From **two different** terminals, start the docker to run RabbitMQ and Nuclio wi
 
   The bot will warn you not to stop it to continue receiving updates on the plant.
 
-After all these steps, you are able to send a value using both **sendrandomumidity** on Nuclio and an **MQTT client** from your smartphone and if this value is **less than or equal to 10** you will be notified on the bot and asked to make a decision.
+After all these steps, you are able to send a value using both **sendrandomhumidity** on Nuclio and an **MQTT client** from your smartphone and if this value is **less than or equal to 10** you will be notified on the bot and asked to make a decision.
 
 Below will be presented a short **demo** of the execution of the project.
 

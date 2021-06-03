@@ -69,7 +69,7 @@ function connectAndWait() {
 
 // * Aspetto messaggi
 function waitForMessage(msg) {
-  console.log("Umidity: " + msg.content.toString());
+  console.log("Humidity: " + msg.content.toString());
   // * Opzioni per callback
   const options = {
     reply_markup: {
